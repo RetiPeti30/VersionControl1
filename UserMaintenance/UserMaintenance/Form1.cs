@@ -42,23 +42,27 @@ namespace UserMaintenance
         private void button2_Click(object sender, EventArgs e)
         {
             SaveFileDialog save = new SaveFileDialog();
-            save.FileName = "Mentettlista.txt";
-            save.Filter = "Text File | *.txt";
+            save.InitialDirectory = Application.StartupPath; 
+            save.Filter = "Comma Seperated Values (*.csv)|*.csv"; 
+            save.DefaultExt = "csv"; 
+            save.AddExtension = true;
+            save.FileName = "Mentettlista.csv";
             if (save.ShowDialog() == DialogResult.OK)
             {
-
-                StreamWriter writer = new StreamWriter(save.OpenFile());
-                for (int i = 0; i < listBox1.Items.Count; i++)
+                using (StreamWriter sw = new StreamWriter(save.FileName, false, Encoding.UTF8))
                 {
-
-                    //writer.WriteLine(users[i]);
-                    //writer.WriteLine(listBox1.Items[i]());
-                    //Nemtudom hogy kell ezt a részt :(
-
+                    sw.Write("ID");
+                    sw.Write(";");
+                    sw.Write("FullName");
+                    sw.WriteLine();
+                    foreach (var sajt in users)
+                    {
+                        sw.Write(sajt.ID);
+                        sw.Write(";");
+                        sw.WriteLine(sajt.FullName);
+        
+                    }
                 }
-                writer.Dispose();
-                writer.Close();
-
             }
         }
     }
