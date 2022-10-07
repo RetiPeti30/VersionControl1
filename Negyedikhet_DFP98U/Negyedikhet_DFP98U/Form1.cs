@@ -12,9 +12,17 @@ namespace Negyedikhet_DFP98U
 {
     public partial class Form1 : Form
     {
+        RealEstateEntities real = new RealEstateEntities();
+        List<Flat> Flatties;
         public Form1()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            Flatties = real.Flats.ToList();
         }
     }
 }
