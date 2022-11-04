@@ -57,6 +57,7 @@
     <Compile Include="Entities\Car.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Entities\CarFactory.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
