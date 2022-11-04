@@ -1,4 +1,5 @@
-﻿using Mikulas.Entities;
+﻿using Mikulas.Abstraction;
+using Mikulas.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,10 @@ namespace Mikulas
 {
     public partial class Form1 : Form
     {
-        private List<Ball> _balls = new List<Ball>();
+        private List<Toy> _toys = new List<Toy>();
 
-        private BallFactory _factory;
-        public BallFactory Factory
+        private IToyFactory _factory;
+        public IToyFactory Factory
 
         {
             get { return _factory; }
@@ -30,16 +31,16 @@ namespace Mikulas
 
         private void createTimer_Tick(object sender, EventArgs e)
         {
-            var ball = Factory.CreateNew();
-            _balls.Add(ball);
-            ball.Left = -ball.Width;
-            panel1.Controls.Add(ball);
+            var toy = Factory.CreateNew();
+            _toys.Add(toy); //nemtudom mi a hiba
+            toy.Left = -toy.Width;
+            panel1.Controls.Add(toy);
         }
 
         private void conveyorTimer_Tick(object sender, EventArgs e)
         {
             var maxPosition = 0;
-            foreach (var ball in _balls)
+            foreach (var ball in _toys)
             {
                 ball.MoveToy();
                 if (ball.Left > maxPosition)
@@ -48,9 +49,9 @@ namespace Mikulas
 
             if (maxPosition > 1000)
             {
-                var oldestBall = _balls[0];
+                var oldestBall = _toys[0];
                 panel1.Controls.Remove(oldestBall);
-                _balls.Remove(oldestBall);
+                _toys.Remove(oldestBall);
             }
         }
     }
