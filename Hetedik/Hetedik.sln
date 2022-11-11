@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hetedik", "Hetedik\Hetedik.csproj", "{69BB63F9-72D9-4611-8989-21376444CC82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69BB63F9-72D9-4611-8989-21376444CC82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69BB63F9-72D9-4611-8989-21376444CC82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69BB63F9-72D9-4611-8989-21376444CC82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69BB63F9-72D9-4611-8989-21376444CC82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {19E070A6-83D8-49C1-98C4-83F0EE559F9D}
+	EndGlobalSection
+EndGlobal
