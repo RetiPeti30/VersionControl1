@@ -60,7 +60,7 @@ namespace week05
                 var rate = new RateData();
                 Rates.Add(rate);
 
-                rate.Date = DateTime.Parse(element.GetAttribute("data"));
+                rate.Date = DateTime.Parse(element.GetAttribute("date"));
 
                 var childElement = (XmlElement)element.ChildNodes[0];
                 rate.Currency = childElement.GetAttribute("curr");
