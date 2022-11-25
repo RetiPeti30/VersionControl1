@@ -33,7 +33,7 @@ namespace UnitTestExample.Controllers
             var account = new Account()
             {
                 Email = email,
-                Password = password,
+                Password = password
             };
 
             var newAccount = AccountManager.CreateAccount(account);
